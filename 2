@@ -1,0 +1,33 @@
+reviews = [
+    ("The movie was excellent", "positive"),
+    ("Worst movie ever", "negative"),
+    ("I loved the movie", "positive"),
+    ("The story was boring", "negative"),
+    ("Amazing performance", "positive"),
+    ("Bad acting", "negative")
+]
+
+positive_words = ["good", "great", "excellent", "amazing", "fantastic", "love"]
+negative_words = ["bad", "worst", "boring", "poor", "terrible", "hate"]
+
+test_review = "The movie was amazing but boring".lower()
+print("Test Review:", test_review)
+
+pos_count = 0
+neg_count = 0
+
+for word in test_review.split():
+    if word in positive_words:
+        pos_count += 1
+    if word in negative_words:
+        neg_count += 1
+
+if pos_count > neg_count:
+    print("Predicted Sentiment: Positive")
+elif neg_count > pos_count:
+    print("Predicted Sentiment: Negative")
+else:
+    print("Predicted Sentiment: Neutral")
+
+print("Positive count:", pos_count)
+print("Negative count:", neg_count)
